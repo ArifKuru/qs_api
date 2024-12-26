@@ -81,7 +81,7 @@ def generate_survey():
         response = chat_session.send_message(prompt)
 
         # AI'dan gelen cevabı döndür
-        return response.text
+        return jsonify({"survey": response.text})
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
